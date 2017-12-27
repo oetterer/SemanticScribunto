@@ -9,7 +9,7 @@ matrix:
       php: 5.5
     - env: DB=sqlite; MW=REL1_28; SITELANG=ja
       php: 5.5
-    - env: DB=sqlite; MW=REL1_30; PHPUNIT=4.8.*
+    - env: DB=sqlite; MW=master; PHPUNIT=4.8.*
       php: '7'
 
 install:
@@ -19,7 +19,7 @@ script:
   - bash ./tests/travis/run-tests.sh
 
 after_success:
-  - bash #./tests/travis/upload-coverage-report.sh
+  - bash ./tests/travis/upload-coverage-report.sh
 
 notifications:
   email:
